@@ -115,3 +115,49 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlide();
     window.addEventListener("resize", updateSlide);
 });
+
+//탭메뉴
+document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabPanes = document.querySelectorAll(".tab-pane");
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // 버튼 활성화
+            tabButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            // 탭 내용 활성화
+            const target = btn.getAttribute("data-target");
+            tabPanes.forEach(pane => {
+                pane.classList.remove("active");
+                if (pane.id === target) {
+                    pane.classList.add("active");
+                }
+            });
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btns = document.querySelectorAll(".faq__btn");
+
+    btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const faqItem = btn.parentNode;
+            const isActive = faqItem.classList.contains("active");
+
+            removeActiveClasses();
+
+            if (!isActive) {
+                faqItem.classList.add("active");
+            }
+        });
+    });
+
+    function removeActiveClasses() {
+        btns.forEach((btn) => {
+            btn.parentNode.classList.remove("active");
+        });
+    }
+});
