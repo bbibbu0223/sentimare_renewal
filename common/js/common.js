@@ -1,6 +1,6 @@
 $(function () {
-    $('header').load('/common/html/inc.html header > div');
-    $('footer').load('/common/html/inc.html footer > div');
+    $('header').load('./common/html/inc.html header > div');
+    $('footer').load('./common/html/inc.html footer > div');
 });
 
 // mouse

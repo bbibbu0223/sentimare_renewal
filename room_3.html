@@ -18,9 +18,14 @@
 
     <main class="room">
         <section class="slider">
-            <img src="./common/images/dwi-aryasa-PNHrdkS6pcM-unsplash.jpg" alt="">
-            <img src="./common/images/room3-1.jpg" alt="">
-            <img src="./common/images/room3-2.jpg" alt="">
+            <div class="slides">
+                <img src="./common/images/dwi-aryasa-PNHrdkS6pcM-unsplash.jpg" alt="">
+                <img src="./common/images/room3-1.jpg" alt="">
+                <img src="./common/images/room3-2.jpg" alt="">
+            </div>
+            <button class="prev">〈 </button>
+            <button class="next"> 〉</button>
+            <div class="dots"></div>
         </section>
         <div class="flex">
             <div class="notice1">
@@ -48,7 +53,8 @@
                     <li>글램핑 1호</li>
                     <li>구분 없는 원룸</li>
                     <li>인원 기준2 / 최대 3</li>
-                    <a href="#pop_info_1" class="btn_open" aria-label="link-1" rel="noopener" draggable="false" class="link w-inline-block">
+                    <a href="#pop_info_1" class="btn_open" aria-label="link-1" rel="noopener" draggable="false"
+                        class="link w-inline-block">
                         <li class="point">객실 어메니티 보기</li>
                     </a>
                 </ul>
@@ -67,10 +73,10 @@
             <div class="modal_text">
                 <h3>Room Amenity</h3>
                 <div class="modal_project">
-                    
+
                     <div class="modal_content">
                         <div class="flex">
-                            <div class="line">   
+                            <div class="line">
                                 <h5>basic</h5>
                                 <ul>
                                     <li>원목 가구</li>
@@ -109,25 +115,25 @@
 
 <script>
     //popup
-var target = document.querySelectorAll('.btn_open');
-var btnPopClose = document.querySelectorAll('.modal_wrap .close_btn');
-var targetID;
-console.log(target)
+    var target = document.querySelectorAll('.btn_open');
+    var btnPopClose = document.querySelectorAll('.modal_wrap .close_btn');
+    var targetID;
+    console.log(target)
 
-// 팝업 열기
-for (var i = 0; i < target.length; i++) {
-    target[i].addEventListener('click', function () {
-        targetID = this.getAttribute('href');
-        document.querySelector(targetID).style.display = 'block';
-    });
-}
+    // 팝업 열기
+    for (var i = 0; i < target.length; i++) {
+        target[i].addEventListener('click', function () {
+            targetID = this.getAttribute('href');
+            document.querySelector(targetID).style.display = 'block';
+        });
+    }
 
-// 팝업 닫기
-for (var j = 0; j < target.length; j++) {
-    btnPopClose[j].addEventListener('click', function () {
-        this.parentNode.parentNode.style.display = 'none';
-    });
-}
+    // 팝업 닫기
+    for (var j = 0; j < target.length; j++) {
+        btnPopClose[j].addEventListener('click', function () {
+            this.parentNode.parentNode.style.display = 'none';
+        });
+    }
 </script>
 
 </html>
