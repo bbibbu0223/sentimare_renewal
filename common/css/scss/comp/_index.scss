@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=EB+Garamond&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Noto+Sans+KR:wght@100..900&family=Raleway:wght@300&display=swap');
+
+
+header {
+    margin: 42px;
+    padding-bottom: 24px;
+    gap: 12px;
+
+    border-bottom: 1px solid var(--b1);
+
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .logo {
+            font-family: 'Edu AU VIC WA NT Pre', sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            color: var(--p1);
+        }
+
+        .sub {
+            display: inline-flex;
+            align-items: center;
+            gap: 32px;
+
+            a {
+                font-weight: 600;
+                font-size: 16px;
+
+                &:hover {
+                    color: var(--p1);
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: var(--m1);
+    margin: 42px;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 12px 0 12px;
+        border-top: 1px solid var(--b1);
+        width: 100%;
+
+        span{
+            cursor: pointer;
+        }
+        p {
+            line-height: 1.5rem;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+}
+
+main {
+    margin: 0 42px;
+
+    .slider {
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .quick {
+        background-color: var(--m1);
+        padding: 42px 0 0;
+
+        display: flex;
+        gap: 8px;
+        
+        width: 100%;
+        height: 100%;
+
+        cursor: pointer;
+
+        li {
+            width: calc(100%/3);
+            height: calc(100%/3);
+
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+
+            p {
+                background: var(--p1);
+                color: var(--b2);
+                width: 100%;
+                height: 32px;
+                padding: 8px;
+                font-weight: 500;
+
+                position: relative;
+                bottom: 30px;
+            }
+
+            &:hover{
+                p{
+                    color: var(--b1);
+                    background: var(--p2);
+                    transition: ease-in-out .3s;
+                }
+            }
+        }
+
+    }
+}

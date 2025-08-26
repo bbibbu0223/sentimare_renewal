@@ -1,0 +1,193 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=EB+Garamond&family=Noto+Sans+KR:wght@100..900&family=Raleway:wght@300&display=swap');
+
+@font-face {
+    font-family: "FAS";
+    font-weight: 300;
+    src: url("./common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("./common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+//color
+:root {
+    --m1: #ececec;
+    --m2: #8fa9ff;
+
+    --p1: #8475d6;
+    --p2: #8bf386;
+
+    --b1: #000000;
+    --b2: #FFFFFF;
+}
+
+body {
+    margin: 0 120px;
+    padding: 0;
+    background-color: var(--m1);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 2000;
+    background: var(--p1);
+    user-select: none;
+    pointer-events: none;
+    transform: scale(1);
+    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+
+    .cursor.active {
+        opacity: .5;
+        transform: scale(0);
+    }
+}
+
+.cursor-follower {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 1000;
+    background: var(--p2);
+    opacity: 75%;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(1);
+    transition: transform .6s ease-in-out, opacity .2s ease-in-out;
+
+    .cursor-follower.active {
+        opacity: .7;
+        transform: scale(4);
+    }
+}
+
+
+@mixin scroll {
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--m2);
+        border-radius: 10px;
+        border: 2px solid transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--p1);
+        border-radius: 10px;
+    }
+}
+
+.scroll {
+    @include scroll();
+}
+
+.mt16 {
+    margin-top: 16px;
+}
+
+.modal_wrap {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 63, 63, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    
+    .close_btn {
+        &::before{
+            content: '\f00d';
+            display: block;
+            font-size: 20px;
+            color: var(--b1);
+            font-family: "FAS";
+            position: absolute;
+            right: 24px;
+            top: 14px;
+            cursor: pointer;
+        }
+    }
+    
+    .modal_item {
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        justify-content: center;
+        z-index: 5;
+        box-shadow: 0px 0px 15px rgba(63, 63, 63, 0.5);
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--b2);
+        z-index: 1000;
+        border-radius: 14px;
+    }
+    
+    .modal_text {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+
+        h3 {
+            font-size: 35px;
+            color: var(--b1);
+            position: relative;
+            display: block;
+            width: 100%;
+        
+            &::after {
+                position: absolute;
+                content: " ";
+                width: 9px;
+                height: 9px;
+                top: 10%;
+                background-color: var(--p2);
+                border-radius: 30px;
+            }
+        }
+    }
+
+    .modal_project {
+        margin-top: 50px;
+        position: relative;
+
+        .modal_content {
+            margin-top: 50px;
+            width: 100%;
+            text-align: justify;
+
+            li{
+                line-height: 1.5rem;
+            }
+    
+            h5 {
+                font-size: 20px;
+                color: var(--b1);
+                margin: 12px 0;
+                display: flex;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: var(--p2);
+                    border-radius: 40px;
+                }
+            }
+        }
+    }
+}

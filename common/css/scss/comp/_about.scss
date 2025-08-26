@@ -1,0 +1,22 @@
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    
+    img{
+        width: calc(100%/3);
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+.discrip{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 42px;
+    span{
+        width: calc(100%/3);
+        line-height: 2rem;
+    }
+}

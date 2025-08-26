@@ -1,0 +1,76 @@
+.room {
+    img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+
+    .notice1,
+    .notice2{
+        border-top: 1px solid var(--b1);
+        margin-top: 42px;
+        width: calc(100%/3);
+
+        h2,
+        p{
+            font-weight: 600;
+            font-size: 20px;
+            margin-top: 24px;
+        }
+    
+        li {
+            display: flex;
+            gap: 8px;
+            line-height: 1.5rem;
+            font-size: 14px;
+            
+            &::before{
+                display: block;
+                content: '\f111';
+                font-family: 'FAS';
+                font-size: 6px;
+                color: var(--p1);
+            }
+        }
+    }
+    
+}
+
+.flex{
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.line{
+    border-top: 1px solid var(--b1);
+    margin: 16px 0;
+    width: calc(100%/2);
+}
+
+.point{
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 42px 0;
+
+    .listBtn{
+        height: 32px;
+        background: var(--p1);
+        color: var(--b2);
+        border-radius: 4px;
+        padding: 0 8px;
+        cursor: pointer;
+
+        &:hover{
+            background: var(--b1);
+            transition: .3s;
+        }
+    }
+}
